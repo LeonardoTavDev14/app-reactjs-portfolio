@@ -1,0 +1,29 @@
+@media (max-width: 480px) {
+  .form {
+    padding: 1.5rem;
+  }
+
+  .text h2 {
+    font-size: 1.5rem;
+  }
+
+  .text p {
+    font-size: 0.875rem;
+  }
+
+  input {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+}
+
+.containerVideoPort {
+  video {
+    border-radius: 20px;
+  }
+}

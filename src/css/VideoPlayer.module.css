@@ -1,0 +1,36 @@
+.videoContainer {
+  text-align: center;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}

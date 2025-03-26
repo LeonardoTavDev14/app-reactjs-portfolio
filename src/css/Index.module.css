@@ -1,0 +1,360 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #0056b3;
+  --highlight-color: #ffc107;
+  --white: #fff;
+  --black: #000;
+  --light-gray: #ccc;
+
+  --font-size-large: 32px;
+  --font-size-medium: 19px;
+  --font-size-small: 1.1rem;
+  --font-size-title: 2rem;
+
+  --padding-large: 76.3px 39px;
+  --padding-medium: 40px 20px;
+  --gap-small: 15px;
+  --gap-medium: 20px;
+
+  --box-shadow-light: 0 2.1px 9px rgba(0, 0, 0, 0.3);
+  --box-shadow-dark: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --box-shadow-fulldark: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.sectionPort,
+.sectionProjeto,
+.sectionFeed,
+.sectionCourses {
+  padding: var(--padding-large);
+}
+
+.sectionObjetivo,
+.sectionMe {
+  padding: var(--padding-medium);
+  background-color: var(--primary-color);
+}
+
+.containerPort {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: var(--gap-small);
+}
+
+.itemsPort {
+  width: 40%;
+
+  h1 {
+    font-size: var(--font-size-large);
+  }
+
+  p {
+    font-size: var(--font-size-medium);
+    letter-spacing: 0.1px;
+    line-height: 41px;
+  }
+}
+
+.containerVideoPort {
+  video {
+    box-shadow: var(--box-shadow-fulldark);
+  }
+}
+
+.sectionObjetivo {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: var(--padding-medium);
+  box-shadow: var(--box-shadow-dark);
+}
+
+.containerObjetivos {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--gap-medium);
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+}
+
+.sectionObjetivo h2 {
+  font-size: var(--font-size-title);
+  margin-bottom: var(--gap-medium);
+  text-align: center;
+}
+
+.sectionObjetivo ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-left: var(--gap-medium);
+}
+
+.sectionObjetivo li {
+  font-size: var(--font-size-small);
+  line-height: 1.6;
+  margin-bottom: var(--gap-small);
+}
+
+.sectionObjetivo a {
+  color: var(--highlight-color);
+  text-decoration: none;
+}
+
+.sectionObjetivo a:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+
+.containerItems {
+  box-shadow: var(--box-shadow-light);
+  padding: var(--gap-medium);
+  border-radius: 20px;
+
+  .items {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: var(--gap-small);
+
+    h2 {
+      font-size: 27px;
+    }
+
+    p {
+      font-size: var(--font-size-medium);
+    }
+  }
+}
+
+.containerDescription {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-medium);
+  padding: var(--gap-medium);
+}
+
+.containerProjeto {
+  background-color: var(--white);
+  padding: var(--gap-medium);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.containerProjeto h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.containerProjeto p {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.containerProjeto h4 {
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+.containerProjeto a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.containerProjeto a:hover {
+  text-decoration: underline;
+}
+
+.sectionMe {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: var(--padding-medium);
+  box-shadow: var(--box-shadow-dark);
+}
+
+.containerMe {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--gap-medium);
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+}
+
+.sectionMe h2 {
+  font-size: var(--font-size-title);
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.sectionMe p {
+  font-size: var(--font-size-small);
+  line-height: 1.6;
+  margin-bottom: var(--gap-small);
+  text-align: center;
+}
+
+.sectionMe ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sectionMe li {
+  margin-bottom: var(--gap-small);
+}
+
+.sectionMe li strong {
+  font-weight: bold;
+}
+
+.sectionMe a {
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sectionMe a:hover {
+  text-decoration: underline;
+  transition: all 500ms;
+  color: var(--white);
+}
+
+.containerCourses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.titleCourses {
+  text-align: center;
+}
+
+.titleCourses h2 {
+  font-size: var(--font-size-title);
+}
+
+.titleCourses p {
+  font-size: var(--font-size-medium);
+}
+
+.groupCourses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  border: 2px solid var(--light-gray);
+  padding: 40px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border: 2px solid var(--black);
+  border-radius: 5px;
+  padding: 15px;
+  width: 100%;
+  max-width: 550px;
+}
+
+.group img {
+  width: 30px;
+  display: block;
+}
+
+.group p {
+  font-size: var(--font-size-medium);
+}
+
+.pCourses {
+  text-align: center;
+  margin-top: 30px;
+  font-size: var(--font-size-medium);
+}
+
+.pCourses a {
+  background-color: var(--primary-color);
+  padding: 7px;
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.pCourses a:hover {
+  background-color: var(--secondary-color);
+  transition: all 300ms;
+}
+
+.containerItemsFooter {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+
+  p {
+    font-size: var(--font-size-medium);
+  }
+}
+
+.buttonDownload {
+  padding: 15px 40px;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-family: inherit;
+
+  &:hover {
+    background: #0056b3;
+  }
+}
+
+@media (max-width: 768px) {
+  .form {
+    max-width: 90%;
+    padding: 30px;
+  }
+
+  .formGroup input,
+  .formGroup textarea,
+  button {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .containerDescription {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .containerDescription {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .groupCourses {
+    padding: 20px;
+  }
+
+  .group {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .group img {
+    width: 25px;
+  }
+}

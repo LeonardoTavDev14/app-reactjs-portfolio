@@ -1,0 +1,85 @@
+.PopupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.Popup {
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  animation: slideUp 0.3s ease-in-out;
+}
+
+.Popup p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.Popup button {
+  background: #ff4b5c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-family: "Poppins", sans-serif;
+}
+
+.Popup button:hover {
+  background: #e04353;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .Popup {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .Popup p {
+    font-size: 14px;
+  }
+
+  .Popup button {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
