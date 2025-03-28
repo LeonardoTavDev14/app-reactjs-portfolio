@@ -8,6 +8,8 @@ import Index from "../pages/Index";
 import Cookies from "js-cookie";
 import { Navigate } from "react-router-dom";
 import Feedback from "../pages/Feedback";
+import Contato from "../pages/Contato";
+import Projetos from "../pages/Projetos";
 
 const PrivateRoutes = ({ children }) => {
   const token = Cookies.get("token");
@@ -59,6 +61,22 @@ const AppIndex = () => {
           element={
             <PrivateRoutes>
               <Index />
+            </PrivateRoutes>
+          }
+        />
+        <Route
+          path="/contato"
+          element={
+            <PrivateRoutes>
+              <Contato />
+            </PrivateRoutes>
+          }
+        />
+        <Route
+          path="/projetos"
+          element={
+            <PrivateRoutes>
+              <Projetos />
             </PrivateRoutes>
           }
         />

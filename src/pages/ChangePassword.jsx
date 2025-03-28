@@ -83,7 +83,7 @@ const ChangePassword = ({ title, description }) => {
 
           <div className={styles.formWrapper}>
             <div className={styles.formGroup}>
-              <label htmlFor="password">Senha</label>
+              <label htmlFor="password">Nova Senha</label>
               <div className={styles.passwordContainer}>
                 <input
                   type={showPassword ? "text" : "password"}

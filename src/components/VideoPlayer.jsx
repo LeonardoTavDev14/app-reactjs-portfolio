@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "../css/VideoPlayer.module.css";
 
-const VideoPlayer = ({ videoSrc, thumbnailSrc, title }) => {
+const VideoPlayer = ({ videoSrc, thumbnailSrc }) => {
   const [videoIsPlaying, setVideoIsPlaying] = useState(false);
 
   const handlePlay = () => {
@@ -14,12 +14,10 @@ const VideoPlayer = ({ videoSrc, thumbnailSrc, title }) => {
 
   return (
     <div className={styles.videoContainer}>
-      <h2>{title}</h2>
-
       <div className={styles.videoWrapper}>
         {!videoIsPlaying && (
           <div className={styles.thumbnail} onClick={handlePlay}>
-            <img src={thumbnailSrc} alt="thumbnail" />
+            <img src={thumbnailSrc} alt="Thumbnail video" />
           </div>
         )}
 
@@ -31,7 +29,7 @@ const VideoPlayer = ({ videoSrc, thumbnailSrc, title }) => {
           onPlay={handlePlay}
           onPause={handlePause}
           poster={thumbnailSrc}
-        />
+        ></video>
       </div>
     </div>
   );
