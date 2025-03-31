@@ -2,8 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styles from "../css/Index.module.css";
 import { Link } from "react-router-dom";
-import Video from "../essentials/myMidiasSocials.mp4";
-import VideoPlayer from "../components/VideoPlayer";
+import YoutubePlayer from "../components/YoutubePlayer";
 import HashTag from "../assets/hashtag.png";
 import Solyd from "../assets/solyd.png";
 import Downloads from "../components/DownloadCertificates";
@@ -28,11 +27,7 @@ const Index = () => {
             </div>
 
             <div className={styles.containerVideoPort}>
-              <VideoPlayer
-                videoSrc={Video}
-                thumbnailSrc="https://img.freepik.com/fotos-premium/fundo-de-tecnologia-abstrata-de-codigo-de-programacao-do-desenvolvedor-de-software-e-script-de-computador_34663-31.jpg?semt=ais_hybrid"
-                title=""
-              />
+              <YoutubePlayer videoId="oNWdA4xAgTw/edit" />
             </div>
           </div>
         </section>

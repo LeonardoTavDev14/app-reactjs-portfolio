@@ -105,7 +105,7 @@ const ChangePassword = ({ title, description }) => {
             </div>
 
             <div className={styles.formGroup}>
-              <label htmlFor="confirmPassword">Confirmar Senha</label>
+              <label htmlFor="confirmPassword">Confirmar sua Nova Senha</label>
               <div className={styles.passwordContainer}>
                 <input
                   type={showPassword ? "text" : "password"}

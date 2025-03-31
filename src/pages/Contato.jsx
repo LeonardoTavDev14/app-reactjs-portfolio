@@ -49,7 +49,7 @@ const Contato = () => {
               <div className={styles.containerFaculdade}>
                 <h3>Universidade</h3>
                 <p>
-                  <strong>UMC: </strong>Universidade de Mogi das Cruzes
+                  <strong>UMC - </strong>Universidade de Mogi das Cruzes
                 </p>
               </div>
               <div className={styles.containerSemestres}>
