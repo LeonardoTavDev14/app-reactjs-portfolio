@@ -1,101 +1,188 @@
 import styles from "../css/Contato.module.css";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Imagem from "../assets/imagemme.jpeg";
-import JavaScript from "../assets/javascript.png";
-import ReactJs from "../assets/reactjs.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faJs } from "@fortawesome/free-brands-svg-icons";
+import { faPython } from "@fortawesome/free-brands-svg-icons";
+import { faJava } from "@fortawesome/free-brands-svg-icons";
+import { faReact } from "@fortawesome/free-brands-svg-icons";
+import { faGit } from "@fortawesome/free-brands-svg-icons";
+import { faSquare } from "@fortawesome/free-solid-svg-icons";
+import { faArrowsTurnToDots } from "@fortawesome/free-solid-svg-icons";
+import { faCarrot } from "@fortawesome/free-solid-svg-icons";
+import { faT } from "@fortawesome/free-solid-svg-icons";
 import Typescript from "../assets/typescript.png";
-import Git from "../assets/git.png";
-import Python from "../assets/python.png";
-import Java from "../assets/java.png";
 import Flask from "../assets/flask.png";
 
 const Contato = () => {
   return (
     <>
-      <Header />
-
-      <main className={styles.main}>
-        <section className={styles.section}>
-          <div className={styles.containerGeneral}>
-            <div className={styles.container}>
-              <div className={styles.containerOne}>
-                <div className={styles.containerImage}>
-                  <img src={Imagem} alt="Imagem Me" />
-                </div>
-                <div className={styles.containerTexts}>
-                  <h2>Leonardo Tavares Arrais</h2>
-                  <p>
-                    <strong>Idade:</strong>21 anos
-                  </p>
-                  <p>
-                    <strong>E-mail:</strong>contatoleonardotavdev@gmail.com
-                  </p>
-                  <p>
-                    <strong>Curso:</strong>Engenharia de Software
-                  </p>
-                  <p>
-                    <strong>Início:</strong>Jan/2022
-                  </p>
-                  <p>
-                    <strong>Término:</strong>Dez/2025
-                  </p>
-                  <p>
-                    <strong>Semestre:</strong>7º semestre
-                  </p>
-                </div>
+      <main>
+        <section className={styles.sectionContato}>
+          <div className={styles.containerGeral}>
+            <div className={styles.containerImagesInfos}>
+              <div className={styles.containerImg}>
+                <img src={Imagem} alt="Imagem me" />
               </div>
-              <hr />
-              <div className={styles.containerTwo}>
-                <div className={styles.containerUniversidade}>
-                  <h3>Universidade</h3>
-                  <p>
-                    <strong>UMC:</strong>Universidade de Mogi das Cruzes
-                  </p>
+              <div className={styles.containerInfo}>
+                <h2>Leonardo Tavares Arrais</h2>
+                <p>
+                  <strong>Idade: </strong>21 anos
+                </p>
+                <p>
+                  <strong>E-mail: </strong>contatoleonardotavdev@gmail.com
+                </p>
+                <p>
+                  <strong>Curso: </strong>Engenharia de Software
+                </p>
+                <p>
+                  <strong>Semestre: </strong>7º semestre
+                </p>
+                <p>
+                  <strong>Início: </strong>Jan/2022
+                </p>
+                <p>
+                  <strong>Término: </strong>Dez/2025
+                </p>
+              </div>
+            </div>
+            <hr />
+            <div className={styles.containerFaculdadeSemestres}>
+              <div className={styles.containerFaculdade}>
+                <h3>Universidade</h3>
+                <p>
+                  <strong>UMC: </strong>Universidade de Mogi das Cruzes
+                </p>
+              </div>
+              <div className={styles.containerSemestres}>
+                <div>
+                  <h4>1º semestre</h4>
+                  <p>Software básico</p>
+                  <p>Redes e segurança</p>
                 </div>
-                <div className={styles.containerConteudos}>
-                  <div>
-                    <h4>1º semestre</h4>
-                    <p>Software Básico</p>
-                    <p>Redes e Segurança</p>
-                  </div>
-                  <div>
-                    <h4>2º semestre</h4>
-                    <p>Engenharia de Software</p>
-                    <p>Banco de dados</p>
-                  </div>
-                  <div>
-                    <h4>3º semestre</h4>
-                    <p>Análise orientada aos objetos</p>
-                    <p>Implementação orientada de objetos</p>
-                  </div>
-                  <div>
-                    <h4>4º semestre</h4>
-                    <p>Metodologias ágeis</p>
-                    <p>Desenvolvimento de aplicações - API</p>
-                  </div>
-                  <div>
-                    <h4>5º semestre</h4>
-                    <p>Inteligência de negócios</p>
-                    <p>Padrões de projeto</p>
-                  </div>
-                  <div>
-                    <h4>6º semestre</h4>
-                    <p>Gestão de projetos</p>
-                    <p>Inteligência Artificial - IA</p>
-                  </div>
-                  <div>
-                    <h4>7º semestre</h4>
-                    <p>Segurança da informação</p>
-                    <p>Internet das coisas - IOT</p>
-                  </div>
+                <div>
+                  <h4>2º semestre</h4>
+                  <p>Engenharia de software</p>
+                  <p>Banco de dados</p>
+                </div>
+                <div>
+                  <h4>3º semestre</h4>
+                  <p>Análise orientada aos objetos</p>
+                  <p>Implementação orientada do objeto</p>
+                </div>
+                <div>
+                  <h4>4º semestre</h4>
+                  <p>Metodologias ágeis</p>
+                  <p>Desenvolvimento de aplicações</p>
+                </div>
+                <div>
+                  <h4>5º semestre</h4>
+                  <p>Inteligência de negócios</p>
+                  <p>Padrões de projeto</p>
+                </div>
+                <div>
+                  <h4>6º semestre</h4>
+                  <p>Gestão de projetos</p>
+                  <p>Inteligência artificial - IA</p>
+                </div>
+                <div>
+                  <h4>7º semestre</h4>
+                  <p>Internet das coisas - IOT</p>
+                  <p>Segurança da informação</p>
                 </div>
               </div>
             </div>
-            <div className={styles.containerSecundary}>
+            <div className={styles.containerConhecimentosGerais}>
               <div className={styles.containerLinguagens}>
+                <h3>Linguagens</h3>
                 <div>
-                  <img src={JavaScript} alt="Icon JavaScript" />
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faJs}
+                      size="3x"
+                      border="2px solid #000"
+                      color="#000"
+                    />
+                  </div>
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faT}
+                      size="3x"
+                      border="2px solid #000"
+                      color="#000"
+                    />
+                  </div>
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faPython}
+                      size="3x"
+                      border="2px solid #000"
+                      color="#000"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className={styles.containerFrameworks}>
+                <h3>Frameworks</h3>
+                <div>
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faReact}
+                      size="3x"
+                      border="2px solid #000"
+                      color="#000"
+                    />
+                  </div>
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faCarrot}
+                      size="3x"
+                      border="2px solid #000"
+                      color="#000"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className={styles.containerPrevios}>
+                <h3>Conhecimentos prévios</h3>
+                <div>
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faJava}
+                      size="3x"
+                      border="2px solid #000"
+                      color="#000"
+                    />
+                  </div>
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faGit}
+                      size="3x"
+                      border="2px solid #000"
+                      color="#000"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className={styles.containerExtras}>
+                <h3>Extras</h3>
+                <div>
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faArrowsTurnToDots}
+                      size="3x"
+                      border="2px solid #000"
+                      color="#000"
+                    />
+                  </div>
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faSquare}
+                      size="3x"
+                      border="2px solid #000"
+                      color="#000"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
