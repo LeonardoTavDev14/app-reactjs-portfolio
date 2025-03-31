@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styles from "../css/Index.module.css";
 import { Link } from "react-router-dom";
-import Video from "../essentials/video-me.mp4";
+import Video from "../essentials/myMidiasSocials.mp4";
 import VideoPlayer from "../components/VideoPlayer";
 import HashTag from "../assets/hashtag.png";
 import Solyd from "../assets/solyd.png";
