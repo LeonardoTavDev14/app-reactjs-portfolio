@@ -11,8 +11,6 @@ import { faSquare } from "@fortawesome/free-solid-svg-icons";
 import { faArrowsTurnToDots } from "@fortawesome/free-solid-svg-icons";
 import { faCarrot } from "@fortawesome/free-solid-svg-icons";
 import { faT } from "@fortawesome/free-solid-svg-icons";
-import Typescript from "../assets/typescript.png";
-import Flask from "../assets/flask.png";
 
 const Contato = () => {
   return (
