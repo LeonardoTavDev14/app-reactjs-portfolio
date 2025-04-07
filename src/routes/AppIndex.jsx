@@ -24,7 +24,7 @@ const AppIndex = () => {
           path="/"
           element={
             <Cadastro
-              title="Cadastrar Usuário"
+              title="Cadastrar"
               description="Insira as informações abaixo para efetuar o cadastro"
             />
           }
@@ -33,7 +33,7 @@ const AppIndex = () => {
           path="/login"
           element={
             <Login
-              title="Logar Usuário"
+              title="Logar"
               description="Insira as informações abaixo para efetuar o login"
             />
           }

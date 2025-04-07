@@ -56,11 +56,14 @@ const Feedback = ({ title, description }) => {
 
     if (validate()) {
       try {
-        const response = await axios.post("http://localhost:3000/feedback", {
-          nome,
-          email,
-          message,
-        });
+        const response = await axios.post(
+          `${import.meta.env.VITE_URLFEEDBACK}`,
+          {
+            nome,
+            email,
+            message,
+          }
+        );
 
         setPopupMessage(response.data.message);
         setPopupVisible(true);

@@ -21,6 +21,21 @@ const Cadastro = ({ title, description }) => {
   const [showPassword, setShowPassword] = useState(false);
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const navigate = useNavigate();
+  const [passwordValidations, setPasswordValidations] = useState({
+    length: false,
+    upper: false,
+    lower: false,
+    number: false,
+    special: false,
+  });
+
+  const passwordValidation = (password) => ({
+    length: password.length >= 8,
+    upper: /[A-Z]/.test(password),
+    lower: /[a-z]/.test(password),
+    number: /[0-9]/.test(password),
+    special: /[#?!@$%^&*-]/.test(password),
+  });
 
   const validate = () => {
     let isValid = true;
@@ -45,11 +60,15 @@ const Cadastro = ({ title, description }) => {
       setEmailError("");
     }
 
+    const validations = passwordValidation(password);
+    setPasswordValidations(validations);
+    const isPasswordValid = Object.values(validations).every(Boolean);
+
     if (!password) {
       setPasswordError("O campo de senha é obrigatório");
       isValid = false;
-    } else if (password.length < 8) {
-      setPasswordError("A senha deve conter no minimo oito caracteres");
+    } else if (!isPasswordValid) {
+      setPasswordError("A senha não atende os requisitos abaixo");
       isValid = false;
     } else {
       setPasswordError("");
@@ -63,16 +82,20 @@ const Cadastro = ({ title, description }) => {
 
     if (validate()) {
       try {
-        const response = await axios.post("http://localhost:3000/users", {
-          nome,
-          email,
-          password,
-        });
+        const response = await axios.post(
+          `${import.meta.env.VITE_URLCADASTRO}`,
+          {
+            nome,
+            email,
+            password,
+          }
+        );
         setPopupMessage(response.data.message);
         setPopupIsVisible(true);
         setNome("");
         setEmail("");
         setPassword("");
+        setPasswordValidations(passwordValidation(""));
         setTimeout(() => {
           navigate("/login");
         }, 2000);
@@ -124,7 +147,13 @@ const Cadastro = ({ title, description }) => {
                 <input
                   type={showPassword ? "text" : "password"}
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => {
+                    const passwordOnChange = e.target.value;
+                    setPassword(passwordOnChange);
+                    setPasswordValidations(
+                      passwordValidation(passwordOnChange)
+                    );
+                  }}
                   placeholder="Digite a sua senha aqui"
                   style={{ borderColor: passwordError ? "red" : "#ccc" }}
                 />
@@ -138,6 +167,50 @@ const Cadastro = ({ title, description }) => {
               {passwordError && (
                 <span className={styles.error}>{passwordError}</span>
               )}
+              <div className={styles.containerSenha}>
+                <p>A senha deve conter:</p>
+                <ul className={styles.passwordCheck}>
+                  <li
+                    style={{
+                      color: passwordValidations.length ? "green" : "red",
+                    }}
+                  >
+                    {passwordValidations.length ? "✔️" : "❌"} No minimo 8
+                    caracteres
+                  </li>
+                  <li
+                    style={{
+                      color: passwordValidations.upper ? "green" : "red",
+                    }}
+                  >
+                    {passwordValidations.upper ? "✔️" : "❌"} Uma letra
+                    maiúscula
+                  </li>
+                  <li
+                    style={{
+                      color: passwordValidations.lower ? "green" : "red",
+                    }}
+                  >
+                    {passwordValidations.lower ? "✔️" : "❌"} Uma letra
+                    minúscula
+                  </li>
+                  <li
+                    style={{
+                      color: passwordValidations.number ? "green" : "red",
+                    }}
+                  >
+                    {passwordValidations.number ? "✔️" : "❌"} Um número
+                  </li>
+                  <li
+                    style={{
+                      color: passwordValidations.special ? "green" : "red",
+                    }}
+                  >
+                    {passwordValidations.special ? "✔️" : "❌"} Um caracter
+                    especial
+                  </li>
+                </ul>
+              </div>
             </div>
 
             <button className={styles.button} type="submit">

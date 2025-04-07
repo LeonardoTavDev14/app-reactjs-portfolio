@@ -35,7 +35,7 @@ const ResetPassword = ({ title, description }) => {
     if (validate()) {
       try {
         const response = await axios.post(
-          "http://localhost:3000/forgot-password",
+          `${import.meta.env.VITE_URLRESETPASSWORD}`,
           {
             email,
           }

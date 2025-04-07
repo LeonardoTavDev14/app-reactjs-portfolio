@@ -239,10 +239,7 @@ const Index = () => {
             </div>
           </div>
           <div className={styles.containerItemsFooter}>
-            <p>
-              Para visualizar informações detalhadas, faça o download do arquivo
-              abaixo.
-            </p>
+            <p>Faça o download dos certificados aqui.</p>
             <Downloads />
           </div>
         </section>

@@ -19,15 +19,34 @@ const ChangePassword = ({ title, description }) => {
   const [popIsVisible, setPopupIsVisible] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [passwordValidation, setPasswordValidation] = useState({
+    length: false,
+    upper: false,
+    lower: false,
+    number: false,
+    special: false,
+  });
+
+  const passwordValidations = (password) => ({
+    length: password.length >= 8,
+    upper: /[A-Z]/.test(password),
+    lower: /[a-z]/.test(password),
+    number: /[0-9]/.test(password),
+    special: /[#?!@$%^&*-]/.test(password),
+  });
 
   const validate = () => {
     let isValid = true;
 
+    const validations = passwordValidations(password);
+    setPasswordValidation(validations);
+    const isPasswordValid = Object.values(validations).every(Boolean);
+
     if (!password) {
       setPasswordError("O campo de senha é obrigatório");
       isValid = false;
-    } else if (password.length < 8) {
-      setPasswordError("A senha deve conter oito caracteres no minimo");
+    } else if (!isPasswordValid) {
+      setPasswordError("A senha não atende os requisitos abaixo");
       isValid = false;
     } else {
       setPasswordError("");
@@ -52,7 +71,7 @@ const ChangePassword = ({ title, description }) => {
     if (validate()) {
       try {
         const response = await axios.put(
-          `http://localhost:3000/reset-password/${token}`,
+          `${import.meta.env.VITE_URLCHANGEPASSWORD}/${token}`,
           {
             password,
           }
@@ -61,6 +80,8 @@ const ChangePassword = ({ title, description }) => {
         setPopupIsVisible(true);
         setPassword("");
         setConfirmPassword("");
+        setPasswordValidation(passwordValidations(""));
+
         setTimeout(() => {
           navigate("/login");
         }, 2000);
@@ -88,7 +109,11 @@ const ChangePassword = ({ title, description }) => {
                 <input
                   type={showPassword ? "text" : "password"}
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => {
+                    const passwordChange = e.target.value;
+                    setPassword(passwordChange);
+                    setPasswordValidation(passwordValidations(passwordChange));
+                  }}
                   placeholder="Digite sua nova senha aqui"
                   style={{ borderColor: passwordError ? "red" : "#ccc" }}
                 />
@@ -124,6 +149,49 @@ const ChangePassword = ({ title, description }) => {
               {confirmPasswordError && (
                 <span className={styles.error}>{confirmPasswordError}</span>
               )}
+            </div>
+
+            <div className={styles.containerSenha}>
+              <p>A senha deve conter:</p>
+              <ul className={styles.passwordCheck}>
+                <li
+                  style={{
+                    color: passwordValidation.length ? "green" : "red",
+                  }}
+                >
+                  {passwordValidation.length ? "✔️" : "❌"} No minimo 8
+                  caracteres
+                </li>
+                <li
+                  style={{
+                    color: passwordValidation.upper ? "green" : "red",
+                  }}
+                >
+                  {passwordValidation.upper ? "✔️" : "❌"} Uma letra maiúscula
+                </li>
+                <li
+                  style={{
+                    color: passwordValidation.lower ? "green" : "red",
+                  }}
+                >
+                  {passwordValidation.lower ? "✔️" : "❌"} Uma letra minúscula
+                </li>
+                <li
+                  style={{
+                    color: passwordValidation.number ? "green" : "red",
+                  }}
+                >
+                  {passwordValidation.number ? "✔️" : "❌"} Um número
+                </li>
+                <li
+                  style={{
+                    color: passwordValidation.special ? "green" : "red",
+                  }}
+                >
+                  {passwordValidation.special ? "✔️" : "❌"} Um caracter
+                  especial
+                </li>
+              </ul>
             </div>
           </div>
 
